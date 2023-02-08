@@ -1,10 +1,16 @@
 # Requisito 1
+import time
 import requests
 
 
 def fetch(url):
-    requests.get(url)
-    pass
+    try:
+        response = requests.get(url, timeout=3)
+        time.sleep(1)
+        if response.status_code == 200:
+            return response.text
+    except requests.ReadTimeout:
+        return None
 
 
 # Requisito 2
