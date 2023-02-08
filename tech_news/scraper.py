@@ -1,6 +1,10 @@
 # Requisito 1
+import requests
+
+
 def fetch(url):
-    """Seu código deve vir aqui"""
+    requests.get(url)
+    pass
 
 
 # Requisito 2
