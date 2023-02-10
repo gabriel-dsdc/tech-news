@@ -21,8 +21,10 @@ def analyzer_menu():
             int(input("Digite quantas notícias serão buscadas: "))
         ),
         "1": lambda: search_by_title(input("Digite o título: ")),
-        "2": lambda: search_by_date(input()),
-        "3": lambda: search_by_category(input("Digite a categoria:")),
+        "2": lambda: search_by_date(
+            input("Digite a data no formato aaaa-mm-dd: ")
+        ),
+        "3": lambda: search_by_category(input("Digite a categoria: ")),
         "4": lambda: top_5_categories(),
         "5": lambda: "Encerrando script",
     }
