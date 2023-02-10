@@ -21,5 +21,8 @@ def search_by_date(date: str) -> list[tuple[str, str]]:
 
 
 # Requisito 9
-def search_by_category(category):
-    """Seu código deve vir aqui"""
+def search_by_category(category: str) -> list[tuple[str, str]]:
+    news_list = search_news(
+        {"category": {"$regex": category, "$options": "i"}}
+    )
+    return [(news["title"], news["url"]) for news in news_list]
